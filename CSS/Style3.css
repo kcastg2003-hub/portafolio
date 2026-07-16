@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+* {
+    padding: 0;
+  box-sizing: border-box;
+}
+body {
+
+    font-family: "roboto";
+    background-color: #a5b1c2;
+    margin: 30px 80px;
+    height: 100vh;
+}
+
+
+
+/*-----BUTTON "COMENZAR"--------*/
+.wrapper1 {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  padding: 5% 5%; /* antes: 40% 15% */
+  top: 76%; /* ajusta según necesidad */
+  left: 14%; /* ajusta según necesidad */
+
+  width: 70%; /* antes: 80% */
+  height: auto;
+
+  z-index: 1;
+}
+
+.cta {
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+
+  text-decoration: none;
+  font-family: "Knewave", cursive;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 hwb(46 37% 21%);
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+span {
+  transform: skewX(15deg);
+}
+
+span:nth-child(2) {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+/*****SVG*****/
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+  50% {
+    fill: hwb(46 37% 21%);
+  }
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.wrapper {
+  perspective: 3000px;
+}
+
+.card {
+  width: 360px;
+  height: 530px;
+  transform-style: preserve-3d;
+  transition: transform 8s ease-in-out;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.front-page,
+.back-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.front-page {
+  background-image: url("images/titulo1.png"); /* si tu CSS está en "CSS/StyleIlUS.css" */
+  background-size: cover;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 50px;
+  left: 45px;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.card-title {
+  font-style: 2rem;
+  margin-top: 5px;
+  color: #0fbcf9;
+}
+
+.back-page {
+  background-color: #1e272e;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  text-align: center;
+  padding: 2opx;
+  max-width: 300px;
+}
+
+.card-content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.card-button {
+  background-color: #fbcff9;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+p .card-button:hover {
+  background-color: transparent;
+  color: #0fbcf9;
+  border: 1px solid #0fbcf9;
+}

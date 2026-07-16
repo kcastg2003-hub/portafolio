@@ -1,0 +1,1178 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+
+  font-family: "Knewave", cursive;
+
+  color: #ececee;
+  background-color: hwb(49.5deg 52.9% 0%);
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+}
+html {
+  /* me permite deslizar cuando hago clic en los links del menu */
+  scroll-behavior: smooth;
+}
+/* -----------CONFIGURACION DE LOGO--------- */
+.logo .logoportafolio {
+  height: 60px;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  display: block;
+  z-index: 11;
+}
+
+.logo .logoportafolio:hover {
+  display: block;
+  cursor: pointer;
+}
+
+/* ---------------------MENU----------------------*/
+
+.contenedor-header {
+  background: #1e2326; /* Color de fondo oscuro */
+  position: fixed; /* El menú se queda fijo arriba al hacer scroll */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  top: 0; /* Se posiciona arriba de todo */
+  left: 0; /* Alineado al borde izquierdo */
+  z-index: 99; /* Capa alta para que esté por encima del contenido */
+}
+
+.contenedor-header header {
+  max-width: 1100px; /* Máximo ancho del menú, para no ser muy ancho en pantallas grandes */
+  margin: auto; /* Centrado horizontalmente */
+  display: flex; /* Flexbox para acomodar logo y enlaces */
+  justify-content: space-between; /* Espacio entre logo y menú */
+  align-items: center; /* Alineación vertical al centro */
+  padding: 15px 20px; /* Espacio interno arriba/abajo: 15px, izquierda/derecha: 20px */
+}
+
+.contenedor-header header .logo a {
+  font-family: "Righteous"; /* Fuente personalizada */
+  font-size: 36px; /* Tamaño de letra grande */
+  color: #1cb698; /* Color verde azulado */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.contenedor-header header ul {
+  display: flex; /* Pone los <li> en fila horizontal */
+  list-style: none; /* Quita las viñetas del listado */
+}
+
+.contenedor-header header nav ul li a {
+  text-align: none; /* ❌ ERROR: esta propiedad no existe, debería ser text-align: center si fuera válida */
+  color: #fff; /* Texto blanco */
+  margin: 0 15px; /* Espacio horizontal entre botones del menú */
+  padding: 5px; /* Espacio dentro de cada botón */
+  transition: 0.5s; /* Transición suave de color al hacer hover */
+  text-decoration: none; /* Quita subrayado */
+}
+
+.contenedor-header header nav ul li a:hover {
+  color: hwb(
+    46 37% 21%
+  ); /* Cambia a verde azulado cuando el mouse pasa por encima */
+  display: block;
+}
+
+.nav-responsive {
+  background-color: #ffea87; /* Color del botón de menú hamburguesa */
+  color: #000000; /* Color del ícono (barra) */
+  padding: 5px 10px; /* Espaciado dentro del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al de "mano" */
+  display: none; /* Oculto por defecto; se muestra con media queries */
+}
+
+.contenedor-fondo {
+  width: 50%;
+  height: auto;
+}
+
+/* ---------- SECCION DE DISEÑO DE PERSONAJES ---------- */
+.seccion-disenio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin: -25% 12% 2% -38%; /* mueve el contenedor completo */
+  padding: 0px 42% 0% 57%; /* mueve el contenido dentro */
+  z-index: 1;
+}
+/* ----------- TITULO ILUSTRACION ----------- */
+
+/* TÍTULO */
+.titulo-ilustracion {
+  font-size: 50px;
+  margin: 100px 0px;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.subtitulo {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.texto-largo {
+  max-width: 800px;
+  font-size: 25px;
+  color: #7e7d7d;
+  line-height: 1.6;
+  padding: 10px 8px;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+}
+
+/* ---------------------FLICK BOCK----------------------*/
+
+#magazine {
+  width: 900px;
+  height: 500px;
+  margin: 20px auto 80px auto;
+  z-index: 3;
+}
+
+.turn-page {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  overflow: hidden;
+  position: relative;
+
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.contenido,
+.sticker,
+.mancha {
+  pointer-events: none; /* Esto permite que los clics pasen al sistema de páginas */
+  z-index: 3;
+}
+/*
+.contenido {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+    filter: grayscale(80%) contrast(120%);
+
+}
+*/
+
+/* ---------------------PERSONAJE #1----------------------*/
+
+.sticker {
+  height: 410px;
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  transform: translate(
+    -70px,
+    -60px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+.sticker :hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.6); /* ← AQUÍ LA SOMBRA */
+}
+
+.mancha {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion {
+  font-size: 15px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #2----------------------*/
+
+.sticker1 {
+  height: 388px;
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  transform: translate(
+    -108px,
+    -30px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha1 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion1 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #3----------------------*/
+
+.sticker2 {
+  height: 380px;
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  transform: translate(
+    -80px,
+    -40px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha2 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo2 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion2 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #4----------------------*/
+
+.sticker3 {
+  height: 415px;
+  position: absolute;
+  top: 40px;
+  left: 120px;
+  transform: translate(
+    -182px,
+    -30px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha3 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo3 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion3 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #5----------------------*/
+.sticker4 {
+  height: 380px;
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  transform: translate(
+    -80px,
+    -44px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha4 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo4 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion4 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #6----------------------*/
+
+.sticker5 {
+  height: 320px;
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  transform: translate(
+    -105px,
+    14px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha5 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo5 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion5 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #7----------------------*/
+
+.sticker6 {
+  height: 360px;
+  position: absolute;
+  top: 70px;
+  left: 60px;
+  transform: translate(
+    -110px,
+    -30px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha6 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo6 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion6 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #8----------------------*/
+
+.sticker7 {
+  height: 320px;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  transform: translate(
+    -160px,
+    5px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha7 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo7 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion7 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #9----------------------*/
+
+.sticker8 {
+  height: 360px;
+  position: absolute;
+  top: 60px;
+  left: 70px;
+  transform: translate(
+    -85px,
+    -30px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha8 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo8 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion8 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #10----------------------*/
+
+.sticker9 {
+  height: 375px;
+  position: absolute;
+  top: 40px;
+  left: 140px;
+  transform: translate(
+    -160px,
+    -21px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha9 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo9 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion9 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #11----------------------*/
+
+.sticker10 {
+  height: 370px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  transform: translate(
+    -60px,
+    -30px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha10 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo10 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion10 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #12----------------------*/
+
+.sticker11 {
+  height: 375px;
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  transform: translate(
+    -110px,
+    -16px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha11 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo11 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion11 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #13----------------------*/
+
+.sticker12 {
+  height: 380px;
+  position: absolute;
+  top: 60px;
+  left: 70px;
+  transform: translate(
+    -50px,
+    -45px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha12 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo12 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion12 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #14----------------------*/
+
+.sticker13 {
+  height: 390px;
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  transform: translate(
+    -155px,
+    -27px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha13 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo13 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion13 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #15----------------------*/
+
+.sticker14 {
+  height: 370px;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  transform: translate(
+    -35px,
+    -28px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha14 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo14 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion14 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------PERSONAJE #16----------------------*/
+
+.sticker15 {
+  height: 335px;
+  position: absolute;
+  top: 60px;
+  left: 100px;
+  transform: translate(
+    -110px,
+    -5px
+  ); /* mueve 20px a la derecha y 10px hacia abajo */
+}
+
+.mancha15 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  margin: -20px 172px;
+  padding: 100px 90px 50px 120px;
+  text-align: center;
+  z-index: 1;
+}
+
+.titulo15 {
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.descripcion15 {
+  font-size: px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------P----------------------*/
+
+/*-----BUTTON "COMENZAR"--------*/
+.wrapper1 {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  margin: 80px auto;
+  width: 70%;
+  height: auto;
+
+  z-index: 1;
+}
+
+.cta {
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+
+  text-decoration: none;
+  font-family: "Knewave", cursive;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 hwb(46 37% 21%);
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+span {
+  transform: skewX(15deg);
+}
+
+span:nth-child(2) {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+/*****SVG*****/
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+  0% {
+    fill: rgb(0, 0, 0);
+  }
+  50% {
+    fill: hwb(46 37% 21%);
+  }
+  100% {
+    fill: rgb(0, 0, 0);
+  }
+}
+
+/* ================= FOOTER ================= */
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer {
+  width: 100%;
+  background: #000;
+  padding: 35px 20px;
+  margin-top: 80px;
+}
+
+.footer-contenido {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.datos-contacto {
+  text-align: right;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 18px;
+
+  color: white;
+}
+
+.redes {
+  display: flex;
+
+  gap: 20px;
+}
+
+.redes a {
+  width: 55px;
+  height: 55px;
+
+  background: #111;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.redes i {
+  color: white;
+
+  font-size: 28px;
+}
+
+.redes a:hover {
+  transform: translateY(-5px);
+
+  background: #e5c83f;
+}
+
+.redes a:hover i {
+  color: black;
+}
+
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
+
+@media screen and (max-width: 1024px) {
+  .hero-3d h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-3d p {
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-personales {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/* RESPONSIVE MOVIL */
+/* ========================= */
+
+@media screen and (max-width: 768px) {
+  /* MENU */
+
+  .nav-responsive {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #1e2326;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logo .logoportafolio {
+    height: 40px;
+    left: 10px;
+    top: 15px;
+  }
+
+  .container {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .titulo-ilustracion {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 2.5rem;
+  }
+
+  .containerh1 {
+    font-size: 2rem;
+  }
+
+  /* BOTON */
+
+  .cta {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  /* FOOTER */
+
+  .footer-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .datos-contacto {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  #magazine {
+    width: 100%;
+
+    max-width: 850px;
+
+    height: 480px;
+
+    margin: 40px auto 80px;
+  }
+
+  .seccion-disenio {
+    max-width: 1200px;
+    margin: 90px auto 60px;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .subtitulo {
+    font-size: 38px;
+
+    color: #000;
+
+    margin-bottom: 20px;
+  }
+
+  .texto-largo {
+    max-width: 850px;
+
+    margin: 0 auto 50px;
+
+    font-size: 24px;
+
+    color: #6f6f6f;
+
+    line-height: 1.7;
+  }
+}
+@media (max-width: 768px) {
+.sticker,
+.sticker1,
+.sticker2,
+.sticker3,
+.sticker4,
+.sticker5,
+.sticker6,
+.sticker7,
+.sticker8,
+.sticker9,
+.sticker10,
+.sticker11,
+.sticker12,
+.sticker13,
+.sticker14,
+.sticker15{
+
+    position: absolute !important;
+
+    top: 20px !important;
+
+    left: 55% !important;
+
+    transform: translateX(-50%) !important;
+
+    height: 195px;
+}
+  .titulo,
+  .titulo1,
+  .titulo2,
+  .titulo3,
+  .titulo4,
+  .titulo5,
+  .titulo6,
+  .titulo7,
+  .titulo8,
+  .titulo9,
+  .titulo10,
+  .titulo11,
+  .titulo12,
+  .titulo13,
+  .titulo14,
+  .titulo15 {
+    font-size: 18px;
+    color: white;
+  }
+
+  .descripcion,
+  .descripcion1,
+  .descripcion2,
+  .descripcion3,
+  .descripcion4,
+  .descripcion5,
+  .descripcion6,
+  .descripcion7,
+  .descripcion8,
+  .descripcion9,
+  .descripcion10,
+  .descripcion11,
+  .descripcion12,
+  .descripcion13,
+  .descripcion14,
+  .descripcion15 {
+    text-align: center;
+    font-size: 9px;
+    color: white;
+  }
+
+  .mancha,
+  .mancha1,
+  .mancha2,
+  .mancha3,
+  .mancha4,
+  .mancha5,
+  .mancha6,
+  .mancha7,
+  .mancha8,
+  .mancha9,
+  .mancha10,
+  .mancha11,
+  .mancha12,
+  .mancha13,
+  .mancha14,
+  .mancha15 {
+    position: absolute;
+
+    left: 10px;
+
+    right: 22px;
+
+    bottom: 15px;
+
+    width: auto;
+
+    margin: 0;
+
+    padding: 0;
+
+    text-align: center;
+
+    z-index: 999;
+  }
+}
