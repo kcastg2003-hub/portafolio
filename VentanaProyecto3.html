@@ -22,28 +22,28 @@
 <body>
 
     <!-- MENU ENCABEZADO -->
+    <!-- CONTENEDOR GENERAL -->
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <img src="images/Logoportafolio.jpg" alt="Logo Portafolio" class="logoportafolio">
+                <img src="images/Logoportafolio.jpg" alt="Fondo" class="logoportafolio">
             </div>
-
             <nav id="nav">
                 <ul>
-                    <li><a href="VentanaPrincipal.html" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="#un-poco-sobre-mi" onclick="seleccionar()">UN POCO SOBRE MÍ</a></li>
+                        <li><a href="VentanaPrincipal.html" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="VentanaSobreMi.html" onclick="seleccionar()">UN POCO SOBRE MI</a></li>
                     <li><a href="VentanaDDP.html" onclick="seleccionar()">DISEÑO DE PERSONAJES</a></li>
                     <li><a href="VentanaMO3D.html" onclick="seleccionar()">MODELADO 3D</a></li>
                     <li><a href="VentanaIlus.html" onclick="seleccionar()">ILUSTRACIONES</a></li>
                     <li><a href="VentanaBO.html" onclick="seleccionar()">BOCETOS</a></li>
                 </ul>
             </nav>
-
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </header>
     </div>
+
 
     <main class="contenido-3d">
 
@@ -127,7 +127,7 @@
 
 
                 <p>
-                    1.Descarga el Zip y descomprime el archivo  
+                    1.Descarga el Zip y descomprime el archivo
                 </p>
 
 
@@ -375,12 +375,13 @@
                     </div>
 
                     <div class="card-back">
-                        <h3>Casa Natal de Goya</h3>
+                        <h3>Tutorial de Jugabilidad</h3>
 
                         <p>
-                            Reconstrucción exterior basada en referencias reales.
-                            Se trabajó arquitectura, materiales e iluminación para
-                            representar fielmente este espacio histórico.
+                            Esta interfaz presenta las instrucciones y controles principales del juego, permitiendo que
+                            el usuario conozca las teclas de movimiento e interacción. Su propósito es facilitar la
+                            comprensión de las mecánicas y garantizar una experiencia de juego más intuitiva desde el
+                            inicio.
                         </p>
                     </div>
 
@@ -397,12 +398,13 @@
                     </div>
 
                     <div class="card-back">
-                        <h3>Casa Natal de Goya</h3>
+                        <h3>Exploración del Escenario</h3>
 
                         <p>
-                            Reconstrucción exterior basada en referencias reales.
-                            Se trabajó arquitectura, materiales e iluminación para
-                            representar fielmente este espacio histórico.
+                            El escenario cuenta con una distribución amplia y organizada que brinda visibilidad de los
+                            diferentes elementos presentes en el mapa. Esto permite al jugador identificar zonas
+                            importantes y comprender la función de cada elemento dentro del entorno.
+
                         </p>
                     </div>
 
@@ -418,12 +420,13 @@
                     </div>
 
                     <div class="card-back">
-                        <h3>Casa Natal de Goya</h3>
+                        <h3>Indicadores de Interacción con NPC</h3>
 
                         <p>
-                            Reconstrucción exterior basada en referencias reales.
-                            Se trabajó arquitectura, materiales e iluminación para
-                            representar fielmente este espacio histórico.
+                            Esta interfaz proporciona instrucciones visuales que informan al usuario cuándo es posible
+                            interactuar con un NPC y qué acciones debe realizar para iniciar el diálogo o la interacción
+                            correspondiente.
+
                         </p>
                     </div>
 
@@ -439,12 +442,13 @@
                     </div>
 
                     <div class="card-back">
-                        <h3>Casa Natal de Goya</h3>
+                        <h3>Sistema de Misiones y Recolección</h3>
 
                         <p>
-                            Reconstrucción exterior basada en referencias reales.
-                            Se trabajó arquitectura, materiales e iluminación para
-                            representar fielmente este espacio histórico.
+                            La interacción con determinados NPC permite al jugador conocer su función dentro de la
+                            narrativa y obtener indicaciones sobre la recolección de elementos distribuidos en el mapa.
+                            Estos objetos son necesarios para avanzar y completar diferentes fragmentos de la historia.
+
                         </p>
                     </div>
 
@@ -460,12 +464,13 @@
                     </div>
 
                     <div class="card-back">
-                        <h3>Casa Natal de Goya</h3>
+                        <h3>Narrativa y Desarrollo de Personajes</h3>
 
                         <p>
-                            Reconstrucción exterior basada en referencias reales.
-                            Se trabajó arquitectura, materiales e iluminación para
-                            representar fielmente este espacio histórico.
+                            Cada NPC cuenta con diálogos y fragmentos narrativos que permiten conocer aspectos de su
+                            personalidad, su papel dentro de la historia y la relación que mantienen con el desarrollo
+                            general de la trama.
+
                         </p>
                     </div>
 
@@ -481,12 +486,14 @@
                     </div>
 
                     <div class="card-back">
-                        <h3>Casa Natal de Goya</h3>
+                        <h3>Registro e Inventario Narrativo</h3>
 
                         <p>
-                            Reconstrucción exterior basada en referencias reales.
-                            Se trabajó arquitectura, materiales e iluminación para
-                            representar fielmente este espacio histórico.
+                            Esta interfaz permite consultar información detallada sobre los NPC y visualizar el progreso
+                            del jugador respecto a los elementos recolectados. Asimismo, muestra los fragmentos
+                            obtenidos y aquellos que aún faltan por descubrir, facilitando el seguimiento y la
+                            reconstrucción completa de la historia.
+
                         </p>
                     </div>
 
@@ -613,6 +620,25 @@
         </div>
 
     </footer>
+
+    <script>
+        function mostrarOcultarMenu() {
+
+            let menu = document.getElementById("nav");
+
+            if (menu.style.display === "block") {
+
+                menu.style.display = "none";
+
+            } else {
+
+                menu.style.display = "block";
+
+            }
+        }
+    </script>
+
+
 
 </body>
 
