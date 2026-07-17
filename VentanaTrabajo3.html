@@ -15,30 +15,28 @@
 </head>
 
 <body>
-
-    <!-- MENU -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <img src="images/Logoportafolio.jpg" alt="Fondo" class="logoportafolio">
-            </div>
-
-            <nav id="nav">
-                <ul>
-                    <li><a href="VentanaPrincipal.html">INICIO</a></li>
-                    <li><a href="VentanaSobreMi.html">UN POCO SOBRE MI</a></li>
-                    <li><a href="VentanaDDP.html">DISEÑO DE PERSONAJES</a></li>
-                    <li><a href="VentanaMO3D.html">MODELADO 3D</a></li>
-                    <li><a href="VentanaIlus.html">ILUSTRACIONES</a></li>
-                    <li><a href="VentanaBO.html">BOCETOS</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
+<!-- MENU ENCABEZADO -->
+        <!-- CONTENEDOR GENERAL -->
+        <div class="contenedor-header">
+            <header>
+                <div class="logo">
+                    <img src="images/Logoportafolio.jpg" alt="Fondo" class="logoportafolio">
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="VentanaPrincipal.html" onclick="seleccionar()">INICIO</a></li>
+                        <li><a href="VentanaSobreMi.html" onclick="seleccionar()">UN POCO SOBRE MI</a></li>
+                        <li><a href="VentanaDDP.html" onclick="seleccionar()">DISEÑO DE PERSONAJES</a></li>
+                        <li><a href="VentanaMO3D.html" onclick="seleccionar()">MODELADO 3D</a></li>
+                        <li><a href="VentanaIlus.html" onclick="seleccionar()">ILUSTRACIONES</a></li>
+                        <li><a href="VentanaBO.html" onclick="seleccionar()">BOCETOS</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </header>
+        </div>
 
     <!-- CONTENIDO -->
     <main class="contenido-3d">
