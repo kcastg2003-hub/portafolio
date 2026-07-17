@@ -31,57 +31,28 @@
 <body>
 
 
-    <!-- MENU ENCABEZADO -->
-
-    <div class="contenedor-header">
-
-        <header>
-
-
-            <div class="logo">
-
-                <img src="images/Logoportafolio.jpg" alt="Logo Portafolio" class="logoportafolio">
-
-            </div>
-
-
-
-            <nav id="nav">
-
-                <ul>
-
-                    <li><a href="VentanaPrincipal.html" onclick="seleccionar()">INICIO</a></li>
-
-                    <li><a href="VentanaSobreMi.html" onclick="seleccionar()">UN POCO SOBRE MI</a></li>
-
-                    <li><a href="VentanaDDP.html" onclick="seleccionar()">DISEÑO DE PERSONAJES</a></li>
-
-                    <li><a href="VentanaMO3D.html" onclick="seleccionar()">MODELADO 3D</a></li>
-
-                    <li><a href="VentanaIlus.html" onclick="seleccionar()">ILUSTRACIONES</a></li>
-
-                    <li><a href="VentanaBO.html" onclick="seleccionar()">BOCETOS</a></li>
-
-
-                </ul>
-
-
-            </nav>
-
-
-
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-
-                <i class="fa-solid fa-bars"></i>
-
-            </div>
-
-
-
-        </header>
-
-
-    </div>
+   <!-- MENU ENCABEZADO -->
+        <!-- CONTENEDOR GENERAL -->
+        <div class="contenedor-header">
+            <header>
+                <div class="logo">
+                    <img src="images/Logoportafolio.jpg" alt="Fondo" class="logoportafolio">
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="VentanaPrincipal.html" onclick="seleccionar()">INICIO</a></li>
+                        <li><a href="VentanaSobreMi.html" onclick="seleccionar()">UN POCO SOBRE MI</a></li>
+                        <li><a href="VentanaDDP.html" onclick="seleccionar()">DISEÑO DE PERSONAJES</a></li>
+                        <li><a href="VentanaMO3D.html" onclick="seleccionar()">MODELADO 3D</a></li>
+                        <li><a href="VentanaIlus.html" onclick="seleccionar()">ILUSTRACIONES</a></li>
+                        <li><a href="VentanaBO.html" onclick="seleccionar()">BOCETOS</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </header>
+        </div>
 
 
 
@@ -107,7 +78,7 @@
                 estilizado. Cada pieza refleja mi proceso creativo y técnico, desde la idea inicial hasta su
                 presentación final. Me interesa crear personajes con carácter y objetos que complementen distintos
                 entornos, construyendo escenas coherentes y atractivas.
-
+                <strong>Haz clic sobre cada imagen para descubrir el nombre del lugar representado y la región de Colombia a la que pertenece.</strong>
             </p>
 
 
@@ -414,6 +385,23 @@
 
 
             </div>
+
+            <script>
+                function mostrarOcultarMenu() {
+
+                    let menu = document.getElementById("nav");
+
+                    if (menu.style.display === "block") {
+
+                        menu.style.display = "none";
+
+                    } else {
+
+                        menu.style.display = "block";
+
+                    }
+                }
+            </script>
 
 
 
