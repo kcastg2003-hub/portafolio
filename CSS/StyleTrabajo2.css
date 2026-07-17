@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-y: auto;
+  font-family: "Knewave", cursive;
+  color: #ffffff;
+  background-color: hwb(49.5deg 52.9% 0%);
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo .logoportafolio {
+  height: 60px;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  z-index: 11;
+}
+
+.logo .logoportafolio:hover {
+  cursor: pointer;
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.contenedor-header {
+  background: #1e2326;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.contenedor-header header {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+.contenedor-header header ul {
+  display: flex;
+  list-style: none;
+}
+
+.contenedor-header header nav ul li a {
+  color: #fff;
+  margin: 0 15px;
+  padding: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contenedor-header header nav ul li a:hover {
+  color: hwb(46 37% 21%);
+}
+
+/* ========================= */
+/* RESPONSIVE MENU BTN */
+/* ========================= */
+
+.nav-responsive {
+  background-color: #ffea87;;
+  color: #000000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+/* ========================= */
+/* CONTENIDO PRINCIPAL */
+/* ========================= */
+
+.contenido-3d {
+  max-width: 1400px;
+  margin: 120px auto 50px;
+  padding: 0 20px;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.titulo-galeria {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e2326;
+  margin-bottom: 40px;
+}
+
+.hero-3d {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero-3d h1 {
+  font-size: 3rem;
+  color: #1e2326;
+  margin-bottom: 20px;
+}
+
+.hero-3d p {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1000px;
+  margin: auto;
+  line-height: 1.8;
+  color: #222;
+}
+
+/* ========================= */
+/* GALERÍA 3D EFECTO */
+/* ========================= */
+
+.container-3d {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+
+  perspective: 1000px;
+}
+
+.container-3d .box {
+  width: 580px;
+  height: 350px;
+  position: relative;
+
+  transform-style: preserve-3d;
+  transition: 0.5s;
+
+  overflow: hidden;
+  border-radius: 15px;
+
+  background: #000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.container-3d:hover .box {
+  transform: rotateY(15deg);
+  filter: brightness(0.8);
+}
+
+.container-3d .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 10;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+  filter: brightness(1);
+}
+
+/* imagen */
+.container-3d .imgBx {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container-3d .imgBx img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay */
+.container-3d .imgBx:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(252, 252, 252), #ffffff);
+  opacity: 0;
+  mix-blend-mode: multiply;
+  transition: 0.5s;
+}
+
+.container-3d .box:hover .imgBx:before {
+  opacity: 1;
+}
+
+/* texto */
+.container-3d .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  color: white;
+  z-index: 2;
+}
+
+.container-3d .content h2 {
+  font-size: 18px;
+  transform: translateY(100px);
+  transition: 0.4s;
+}
+
+.container-3d .content p {
+  font-size: 13px;
+  transform: translateY(120px);
+  transition: 0.5s;
+}
+
+.container-3d .box:hover .content h2,
+.container-3d .box:hover .content p {
+  transform: translateY(0);
+}
+
+/* ========================= */
+/* BOTON CONTINUAR */
+/* ========================= */
+
+.wrapper1 {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin: 80px 0;
+}
+
+.cta {
+  display: flex;
+
+  padding: 5px 20px;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  font-family: "Knewave", cursive;
+
+  font-size: 25px;
+
+  color: white;
+
+  background: black;
+
+  transition: 0.5s;
+
+  box-shadow: 6px 6px 0 black;
+
+  transform: skewX(-15deg);
+}
+
+.cta:hover {
+  box-shadow: 10px 10px 0 #e5c83f;
+}
+
+.cta span {
+  transform: skewX(15deg);
+}
+
+.cta span:nth-child(2) {
+  width: 20px;
+
+  margin-left: 30px;
+}
+
+.cta:hover span:nth-child(2) {
+  margin-left: 45px;
+
+  transition: 0.5s;
+}
+
+/* animación flechas */
+
+path.one {
+  transition: 0.4s;
+
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+
+  transform: translateX(-30%);
+}
+
+.cta:hover path.one {
+  transform: translateX(0);
+}
+
+.cta:hover path.two {
+  transform: translateX(0);
+}
+
+@keyframes color_anim {
+  0% {
+    fill: black;
+  }
+
+  50% {
+    fill: #e5c83f;
+  }
+
+  100% {
+    fill: black;
+  }
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer {
+  width: 100%;
+  background: rgb(0, 0, 0);
+  padding: 35px 20px;
+  margin-top: 80px;
+  color: white;
+}
+
+.footer-contenido {
+  flex-direction: column;
+  text-align: center;
+}
+
+.datos-contacto {
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.5;
+}
+
+.redes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes a {
+  width: 55px;
+
+  height: 55px;
+
+  background: black;
+
+  color: white;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 28px;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.redes a:hover {
+  transform: translateY(-5px);
+
+  background: #e5c83f;
+}
+
+
+
+
+
+/* ================================= */
+/* RESPONSIVE TABLET */
+/* ================================= */
+
+@media (max-width: 1024px) {
+  .hero-3d h1 {
+    font-size: 2.5rem;
+  }
+
+  .container-3d .box {
+    width: 450px;
+    height: 280px;
+  }
+
+  .container-3d .box:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* ================================= */
+/* RESPONSIVE MOVIL */
+/* ================================= */
+
+@media (max-width: 768px) {
+  /* MENU */
+
+  .logo .logoportafolio {
+    height: 45px;
+    left: 15px;
+    top: 12px;
+  }
+
+  .nav-responsive {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #1e2326;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* CONTENIDO */
+
+  .contenido-3d {
+    margin-top: 140px;
+    padding: 0 15px;
+  }
+
+  .hero-3d h1 {
+    font-size: 2rem;
+  }
+
+  .hero-3d p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .titulo-galeria {
+    font-size: 1.5rem;
+  }
+
+  /* GALERIA */
+
+  .container-3d {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .container-3d .box {
+    width: 100%;
+    height: 220px;
+  }
+
+  /* QUITAR EFECTO QUE DAÑA EN CELULAR */
+
+  .container-3d:hover .box {
+    transform: none;
+    filter: brightness(1);
+  }
+
+  .container-3d .box:hover {
+    transform: none;
+  }
+
+  /* BOTON */
+
+  .cta {
+    font-size: 18px;
+    padding: 10px 18px;
+  }
+
+  .cta svg {
+    width: 45px;
+    height: auto;
+  }
+
+  /* FOOTER */
+
+  .footer-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .datos-contacto {
+    text-align: center;
+  }
+
+  .redes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .datos-contacto {
+    text-align: center;
+    font-size: 15px;
+  }
+}

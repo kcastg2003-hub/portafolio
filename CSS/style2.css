@@ -1,0 +1,72 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Knewave", cursive;
+  color: #222;
+  background-color: #f5f5dc;
+  overflow-x: hidden; /* permite scroll vertical */
+}
+
+.logoportafolio {
+  height: 60px;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  z-index: 11;
+}
+
+.contenedor-header {
+  background: #1e2326;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+.contenedor-header header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.contenedor-header header .logo a {
+  font-size: 36px;
+  color: #1cb698;
+  text-decoration: none;
+}
+
+.contenedor-header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.contenedor-header nav ul li a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.seccion-disenio {
+  padding-top: 100px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.titulo-principal {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.subtitulo, .texto-largo {
+  margin: 10px 0;
+  font-size: 20px;
+}

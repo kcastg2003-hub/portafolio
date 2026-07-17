@@ -1,0 +1,724 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  overflow-y: auto; /*Quitar las barras de deslizar en página*/
+  font-family: "Knewave", cursive;
+
+  color: #ececee;
+  background-color: hwb(49.5deg 52.9% 0%);
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+}
+
+html {
+  /* me permite deslizar cuando hago clic en los links del menu */
+  scroll-behavior: smooth;
+}
+/* -----------CONFIGURACION DE LOGO--------- */
+.logo .logoportafolio {
+  height: 60px;
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  display: block;
+  z-index: 11;
+}
+
+.logo .logoportafolio:hover {
+  display: block;
+  cursor: pointer;
+}
+
+/* ---------------------MENU----------------------*/
+
+.contenedor-header {
+  background: #1e2326; /* Color de fondo oscuro */
+  position: fixed; /* El menú se queda fijo arriba al hacer scroll */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  top: 0; /* Se posiciona arriba de todo */
+  left: 0; /* Alineado al borde izquierdo */
+  z-index: 99; /* Capa alta para que esté por encima del contenido */
+}
+
+.contenedor-header header {
+  max-width: 1100px; /* Máximo ancho del menú, para no ser muy ancho en pantallas grandes */
+  margin: auto; /* Centrado horizontalmente */
+  display: flex; /* Flexbox para acomodar logo y enlaces */
+  justify-content: space-between; /* Espacio entre logo y menú */
+  align-items: center; /* Alineación vertical al centro */
+  padding: 15px 20px; /* Espacio interno arriba/abajo: 15px, izquierda/derecha: 20px */
+}
+
+.contenedor-header header .logo a {
+  font-family: "Righteous"; /* Fuente personalizada */
+  font-size: 36px; /* Tamaño de letra grande */
+  color: #1cb698; /* Color verde azulado */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.contenedor-header header ul {
+  display: flex; /* Pone los <li> en fila horizontal */
+  list-style: none; /* Quita las viñetas del listado */
+}
+
+.contenedor-header header nav ul li a {
+  text-align: none; /* ❌ ERROR: esta propiedad no existe, debería ser `text-align: center` si fuera válida */
+  color: #fff; /* Texto blanco */
+  margin: 0 15px; /* Espacio horizontal entre botones del menú */
+  padding: 5px; /* Espacio dentro de cada botón */
+  transition: 0.5s; /* Transición suave de color al hacer hover */
+  text-decoration: none; /* Quita subrayado */
+}
+
+.contenedor-header header nav ul li a:hover {
+  color: hwb(
+    46 37% 21%
+  ); /* Cambia a verde azulado cuando el mouse pasa por encima */
+  display: block;
+}
+
+.nav-responsive {
+  background-color: #ffea87; /* Color del botón de menú hamburguesa */
+  color: #000000; /* Color del ícono (barra) */
+  padding: 5px 10px; /* Espaciado dentro del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al de "mano" */
+  display: none; /* Oculto por defecto; se muestra con media queries */
+}
+
+.contenedor-fondo {
+  width: 50%;
+  height: auto;
+}
+
+/* ----------- TITULO ILUSTRACION ----------- */
+
+/* TÍTULO */
+.titulo-ilustracion {
+  font-size: 50px;
+  margin: 32px 0px;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px;
+}
+
+/* -------- DESCRIPCION ILUSTRACIONES -------- */
+
+.descripcion-ilustraciones {
+  max-width: 1000px;
+
+  margin: 40px auto 70px;
+
+  padding: 0 30px;
+
+  text-align: left;
+}
+
+.descripcion-ilustraciones p {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  color: #333;
+}
+
+/* ========================= */
+/* BOTON CONTINUAR */
+/* ========================= */
+
+.wrapper1 {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin: 80px 0;
+}
+
+.cta {
+  display: flex;
+
+  padding: 5px 20px;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  font-family: "Knewave", cursive;
+
+  font-size: 25px;
+
+  color: white;
+
+  background: black;
+
+  transition: 0.5s;
+
+  box-shadow: 6px 6px 0 black;
+
+  transform: skewX(-15deg);
+}
+
+.cta:hover {
+  box-shadow: 10px 10px 0 #e5c83f;
+}
+
+.cta span {
+  transform: skewX(15deg);
+}
+
+.cta span:nth-child(2) {
+  width: 20px;
+
+  margin-left: 30px;
+}
+
+.cta:hover span:nth-child(2) {
+  margin-left: 45px;
+
+  transition: 0.5s;
+}
+
+/* animación flechas */
+
+path.one {
+  transition: 0.4s;
+
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+
+  transform: translateX(-30%);
+}
+
+.cta:hover path.one {
+  transform: translateX(0);
+}
+
+.cta:hover path.two {
+  transform: translateX(0);
+}
+
+@keyframes color_anim {
+  0% {
+    fill: black;
+  }
+
+  50% {
+    fill: #e5c83f;
+  }
+
+  100% {
+    fill: black;
+  }
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite;
+}
+
+#modal-description{
+    color: rgb(0, 0, 0);
+
+}
+
+/*-----------------------------TARJETAS-----------------------------*/
+
+/*-----TARJETA #1--------*/
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+}
+
+.wrapper {
+  perspective: 3000px;
+}
+
+.card {
+  width: 250px;
+  height: 370px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.front-page,
+.back-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+}
+
+.front-page {
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.back-page {
+  background: #1e272e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.card-title{
+  color: rgb(255, 255, 255);
+
+
+}
+.card-info {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  color: #ffea87;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.card-content {
+  text-align: center;
+  padding: 20px;
+    color: #ffea87;
+
+  
+}
+
+.card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.tarjeta1 {
+  background-image: url("../Ilustraciones/RetratoAleja.jpg");
+  background-size: 176%;
+  background-position: -81px 0;
+}
+
+.tarjeta2 {
+  background-image: url("../Ilustraciones/CaricaturaArtista.jpg");
+  background-size: 147%;
+  background-position: -60px 4;
+}
+
+.tarjeta3 {
+  background-image: url("../Ilustraciones/RetratoMalejaColor.png");
+  background-size: 120%;
+  background-position: 0px 0px;
+}
+
+.tarjeta4 {
+  background-image: url("../Ilustraciones/RetratoCartoonColor.jpg");
+  background-size: 150%;
+  background-position: -45px 0;
+}
+
+.tarjeta5 {
+  background-image: url("../Ilustraciones/RetratoVan.jpg");
+  background-size: 150%;
+  background-position: -57px 2px;
+}
+
+.tarjeta6 {
+  background-image: url("../Ilustraciones/RetratoVanGohn.jpg");
+  background-size: 140%;
+  background-position: -50px 0px;
+}
+
+.tarjeta7 {
+  background-image: url("../Ilustraciones/CaricaturaSeñor.png");
+  background-size: 145%;
+  background-position: -100px -20px;
+}
+
+.tarjeta8 {
+  background-image: url("../Ilustraciones/Caricaturaseñor2.png");
+  background-size: 145%;
+  background-position: -60px -37px;
+}
+
+.tarjeta9 {
+  background-image: url("../Ilustraciones/CaricaturaSeñora.png");
+  background-size: 150%;
+  background-position: -50px 0px;
+}
+
+.tarjeta10 {
+  background-image: url("../Ilustraciones/Portada\ tio\ kyprolis\ final\ png.png");
+  background-size: 150%;
+  background-position: -53px 2px;
+}
+
+.tarjeta11 {
+  background-image: url("../Ilustraciones/JohnyBravo.jpg");
+  background-size: 160%;
+  background-position: -90px -30px;
+}
+
+.tarjeta12 {
+  background-image: url("../Ilustraciones/PersoanjeEmi.png");
+  background-size: 103%;
+  background-position: 0px -2px;
+}
+
+.tarjeta13 {
+  background-image: url("../Ilustraciones/TAREA\ 4_KEVIN\ CASTELLANOS.png");
+  background-size: 103%;
+  background-position: 0px 0px;
+}
+
+.tarjeta14 {
+  background-image: url("../Ilustraciones/robot.png");
+  background-size: 145%;
+  background-position: -60px -50px;
+}
+
+.tarjeta15 {
+  background-image: url("../Ilustraciones/RetratoDiego.jpg");
+  background-size: 137%;
+  background-position: -27px 0px;
+}
+
+.tarjeta16 {
+  background-image: url("../images/Ilustracion3.jpg");
+  background-size: 140%;
+  background-position: -56px 24px;
+}
+
+.tarjeta17 {
+  background-image: url("../images/Ilustracion2.jpg");
+  background-size: 135%;
+  background-position: -27px 13px;
+}
+
+.tarjeta18 {
+  background-image: url("../images/Retratocolor.png");
+  background-size: 100%;
+  background-position: 0 -73px;
+}
+
+/* Modal - Estilo base */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000; /* Por encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+  /*display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+  overflow: auto;
+  text-align: center;
+}
+
+/* Imagen del modal */
+#modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer {
+  width: 100%;
+  background: #000;
+  padding: 35px 20px;
+  margin-top: 80px;
+}
+
+.footer-contenido {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.datos-contacto {
+  text-align: right;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 18px;
+
+  color: white;
+}
+
+.redes {
+  display: flex;
+
+  gap: 20px;
+}
+
+.redes a {
+  width: 55px;
+  height: 55px;
+
+  background: #111;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.redes i {
+  color: white;
+
+  font-size: 28px;
+}
+
+.redes a:hover {
+  transform: translateY(-5px);
+
+  background: #e5c83f;
+}
+
+.redes a:hover i {
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .footer-contenido {
+    flex-direction: column;
+  }
+
+  .datos-contacto {
+    text-align: center;
+  }
+}
+
+/* ========================= */
+/* ------------------------------------------------------------------------------------------------ */
+/* ========================= */
+
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
+
+@media screen and (max-width: 1024px) {
+  .hero-3d h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-3d p {
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-personales {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/* RESPONSIVE MOVIL */
+/* ========================= */
+
+@media screen and (max-width: 768px) {
+  /* MENU */
+
+
+  
+  .nav-responsive {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #1e2326;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logo .logoportafolio {
+    height: 40px;
+    left: 10px;
+    top: 15px;
+  }
+
+  .titulo-ilustracion {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 2rem;
+  }
+
+
+
+.descripcion-ilustraciones p{
+  font-size: 15px;
+}
+
+
+  /* CONTENIDO */
+
+  .contenido-3d {
+    margin-top: 90px;
+    padding: 15px;
+  }
+
+  .hero-3d h1 {
+    font-size: 2rem;
+  }
+
+  .hero-3d p {
+    font-size: 15px;
+    text-align: left;
+    line-height: 1.7;
+  }
+
+  .seccion-modelado h2 {
+    font-size: 1.8rem;
+  }
+
+  /* PROYECTOS */
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .proyecto-card img {
+    height: 220px;
+  }
+
+  .proyecto-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .proyecto-info p {
+    font-size: 14px;
+  }
+
+  /* TRABAJOS */
+
+  .grid-personales {
+    grid-template-columns: 1fr;
+  }
+
+  .trabajo-card img {
+    height: 220px;
+  }
+
+  .trabajo-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .trabajo-card p {
+    font-size: 14px;
+  }
+
+  /* FRASE FINAL */
+
+  .frase-final h2 {
+    font-size: 1.8rem;
+  }
+
+  /* BOTON */
+
+  .cta {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  /* FOOTER */
+
+  .footer-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .datos-contacto {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+}
