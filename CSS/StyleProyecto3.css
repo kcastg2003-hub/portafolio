@@ -84,8 +84,8 @@ html {
 }
 
 .nav-responsive {
-  background-color: #1cb698; /* Color del botón de menú hamburguesa */
-  color: #fff; /* Color del ícono (barra) */
+  background-color: #ffea87; /* Color del botón de menú hamburguesa */
+  color: #000000; /* Color del ícono (barra) */
   padding: 5px 10px; /* Espaciado dentro del botón */
   border-radius: 5px; /* Bordes redondeados */
   cursor: pointer; /* Cambia el cursor al de "mano" */
@@ -877,22 +877,155 @@ animation:color_anim 1s infinite;
 }
 
 
-
-/* RESPONSIVE */
-
-@media(max-width:700px){
-
-    .footer-contenido{
-
-        flex-direction: column;
-
-    }
+/* ========================= */
+/* ------------------------------------------------------------------------------------------------ */
+/* ========================= */
 
 
-    .datos-contacto{
+/* ========================= */
+/* RESPONSIVE TABLET */
+/* ========================= */
 
-        text-align:center;
+@media screen and (max-width: 1024px) {
+  .hero-3d h1 {
+    font-size: 2.8rem;
+  }
 
-    }
+  .hero-3d p {
+    text-align: left;
+    padding: 0 20px;
+  }
 
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-personales {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/* RESPONSIVE MOVIL */
+/* ========================= */
+
+@media screen and (max-width: 768px) {
+  /* MENU */
+
+  .nav-responsive {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 70px;
+    right: 0;
+    background: #1e2326;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logo .logoportafolio {
+    height: 40px;
+    left: 10px;
+    top: 15px;
+  }
+
+  /* CONTENIDO */
+
+  .contenido-3d {
+    margin-top: 90px;
+    padding: 15px;
+  }
+
+  .hero-3d h1 {
+    font-size: 2rem;
+  }
+
+  .hero-3d p {
+    font-size: 15px;
+    text-align: left;
+    line-height: 1.7;
+  }
+
+  .seccion-modelado h2 {
+    font-size: 1.8rem;
+  }
+
+  /* PROYECTOS */
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .proyecto-card img {
+    height: 220px;
+  }
+
+  .proyecto-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .proyecto-info p {
+    font-size: 14px;
+  }
+
+  /* TRABAJOS */
+
+  .grid-personales {
+    grid-template-columns: 1fr;
+  }
+
+  .trabajo-card img {
+    height: 220px;
+  }
+
+  .trabajo-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .trabajo-card p {
+    font-size: 14px;
+  }
+
+  /* FRASE FINAL */
+
+  .frase-final h2 {
+    font-size: 1.8rem;
+  }
+
+  /* BOTON */
+
+  .cta {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  /* FOOTER */
+
+  .footer-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .datos-contacto {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .redes {
+    justify-content: center;
+  }
 }
